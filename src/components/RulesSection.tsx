@@ -11,7 +11,7 @@ export default function RulesSection() {
       a: "Initial nominations are completely free of charge. Parents can submit their child's details online or at official school connect & mall desks without any registration cost.",
     },
     {
-      q: "What happens during the Mega Audition on 26th October at Jashn Realty?",
+      q: "What happens during the 1st Mega Audition on 01st November at Jashn Realty?",
       a: "The audition is designed to be child-friendly, playful, and comfortable. Trainers evaluate basic ramp presence, smiles, and self-introduction. It is an encouraging shortlisting round, not a stressful elimination.",
     },
     {

@@ -1,4 +1,5 @@
 import IntroLoader from "@/components/IntroLoader";
+import VisitorLeadCaptureModal from "@/components/VisitorLeadCaptureModal";
 import Header from "@/components/Header";
 import AnnouncementTicker from "@/components/AnnouncementTicker";
 import HeroSection from "@/components/HeroSection";
@@ -18,6 +19,9 @@ export default function Home() {
     <main className="min-h-screen bg-white pb-24 text-charcoal md:pb-0">
       {/* 0. Initial Brand Loader + 3 Sequential Category Images Showcase */}
       <IntroLoader />
+
+      {/* 0B. Site-Wide Visitor Lead Capture Modal for IEM Organizer Data */}
+      <VisitorLeadCaptureModal />
 
       {/* 1. Sticky Navigation Header */}
       <Header />

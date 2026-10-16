@@ -14,62 +14,62 @@ interface ScheduleStep {
 const steps: ScheduleStep[] = [
   {
     step: "01",
-    date: "14 – 24 OCT 2026",
+    date: "20 – 31 OCT 2026",
     title: "Official Nominations Open (Free Entry)",
     location: "Online & Partner Registration Desks",
     description:
-      "Open registrations across Lucknow via school connect programmes, RWA community drives, shopping malls, social media, and radio campaigns.",
-    tags: ["FREE NOMINATION", "SCHOOL CONNECT", "MALL ACTIVATION"],
+      "Open registrations across Lucknow via school connect programmes, RWA community drives, shopping malls, social media, and digital campaigns.",
+    tags: ["20–31 OCT", "FREE ENTRY", "ONLINE REGISTRATION"],
   },
   {
     step: "02",
-    date: "26 OCT 2026",
-    title: "Mega Audition & Screening",
-    location: "Jashn Realty, Lucknow",
+    date: "16 OCT 2026",
+    title: "Meet & Greet: Press & Digital Media Meet",
+    location: "Venue to be disclosed to invited guests",
     description:
-      "All registered children participate in a friendly, comfortable screening. Basic ramp walk, smile, posture & brief intro. Shortlisting into category finals.",
-    tags: ["JASHN REALTY", "STAGE SCREENING", "RESULT FLASH OUT"],
+      "An exclusive networking and media collaboration bringing together PR agencies, influencers, lifestyle bloggers, and media professionals with event patrons.",
+    tags: ["16 OCT", "PRESS MEET", "PRIVATE VENUE"],
   },
   {
     step: "03",
-    date: "27 OCT 2026",
-    title: "Meet & Greet: Press & Digital Media Meet",
-    location: "Official Hospitality Partner Venue",
+    date: "01 NOV 2026",
+    title: "1st Mega Audition & Screening",
+    location: "Jashn Realty, Lucknow",
     description:
-      "A grand networking and media collaboration bringing together PR agencies, influencers, lifestyle bloggers, and media professionals with selected kids.",
-    tags: ["PRESS MEET", "INFLUENCERS", "DIGITAL MEDIA"],
+      "All registered children participate in a friendly, comfortable screening. Basic ramp walk, smile, posture & brief intro. Shortlisting for the next stages.",
+    tags: ["01 NOV", "JASHN REALTY", "STAGE SCREENING"],
   },
   {
     step: "04",
-    date: "28 – 31 OCT 2026",
+    date: "DATES TO BE ANNOUNCED",
     title: "High-Fashion Portfolio Photoshoot",
     location: "Studio Setup with Event Partners",
     description:
-      "All finalist children receive a professional fashion portfolio shoot. Selected pictures featured as the Face of Partner Brands; winners receive printed albums.",
+      "All shortlisted children receive a professional fashion portfolio shoot. Selected pictures featured as the Face of Partner Brands; winners receive printed albums.",
     tags: ["PORTFOLIO SHOOT", "BRAND FACE", "PRINTED ALBUM"],
   },
   {
     step: "05",
-    date: "09 NOV 2026",
-    title: "Fun & Entertainment Tour",
-    location: "Gaming Zone / Water Park, Lucknow",
+    date: "14 NOV 2026",
+    title: "2nd Audition for Shortlisted 24 Candidates",
+    location: "GD Goenka Public School, Lucknow",
     description:
-      "A thrilling relaxation day designed for kids and parents to unwind, bond, play games, and build friendships before the final rehearsals.",
-    tags: ["GAMING ZONE", "WATER PARK", "FAMILY TIME"],
+      "Dedicated 2nd audition and intensive evaluation for the 24 shortlisted candidates selected for the grand finale runway showcase.",
+    tags: ["14 NOV", "GD GOENKA", "TOP 24 FINALISTS"],
   },
   {
     step: "06",
-    date: "10 – 12 NOV 2026",
+    date: "DATES TO BE ANNOUNCED",
     title: "Runway Choreography & Grooming",
     location: "Partner Fashion Institute, Lucknow",
     description:
-      "Three days of dedicated stage training conducted by top fashion institute trainers. Kids learn synchronization, poise, posture, and confidence.",
+      "Dedicated stage training conducted by top fashion institute trainers. Kids learn synchronization, poise, posture, and confident stage presentation.",
     tags: ["FASHION INSTITUTE", "CHOREOGRAPHY", "STAGE POISE"],
   },
   {
     step: "07",
-    date: "13 NOV 2026",
-    title: "Makeup Guidance & Rehearsal",
+    date: "DATES TO BE ANNOUNCED",
+    title: "Makeup Guidance & Mainstage Rehearsal",
     location: "Grand Finale Venue Green Rooms",
     description:
       "Professional makeup artists conduct a gentle, kid-safe styling & makeup guidance session, followed by technical cue rehearsals on the main stage.",
@@ -77,17 +77,17 @@ const steps: ScheduleStep[] = [
   },
   {
     step: "08",
-    date: "14 NOV 2026",
-    title: "Children's Day Special: MEGA FINALE",
+    date: "DATE ANNOUNCING SOON",
+    title: "Grand Fashion Celebration: MEGA FINALE",
     location: "Grand Fashion Runway Stage, Lucknow",
     description:
       "The spectacular grand finale celebration! All segments take the stage before an esteemed celebrity jury, VIP guests, brand leaders, and media cameras.",
-    tags: ["CHILDREN'S DAY", "MEGA FINALE", "AWARDS & PRIZES"],
+    tags: ["DATE ANNOUNCING SOON", "MEGA FINALE", "AWARDS & PRIZES"],
   },
 ];
 
 export default function ScheduleFlowSection() {
-  const [selectedStep, setSelectedStep] = useState<number>(1); // 26 Oct Mega Audition default highlight
+  const [selectedStep, setSelectedStep] = useState<number>(2); // 01 Nov 1st Audition @ Jashn Realty default highlight
 
   return (
     <section id="schedule" className="py-20 bg-white border-b border-border-pink">
@@ -102,7 +102,7 @@ export default function ScheduleFlowSection() {
             Event Flow &amp; Timeline
           </h2>
           <p className="mt-2 text-sm sm:text-base text-charcoal-muted leading-relaxed">
-            From the first free nomination to the Children&apos;s Day Mega Finale, every stage is 
+            From the first free nomination to the spectacular Grand Finale, every stage is 
             meticulously curated to provide a stress-free, celebratory, and enriching experience for children and families.
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function ScheduleFlowSection() {
         {/* Timeline Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
           {steps.map((st, idx) => {
-            const isHighlight = idx === 1 || idx === 7; // Audition & Finale
+            const isHighlight = idx === 2 || idx === 4 || idx === 7; // 1st Audition, 2nd Audition, Finale
             const isSelected = selectedStep === idx;
 
             return (

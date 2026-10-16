@@ -79,7 +79,7 @@ export default function HeroGalleryCarousel() {
             <span>JASHN REALTY PRESENTS &bull; 360° RUNWAY GALLERY</span>
           </div>
           <h2 className="font-serif text-xl sm:text-3xl lg:text-4xl font-extrabold text-pink-primary uppercase tracking-tight">
-            Runway Kids Fashion Week 2026
+            Jashn Realty Presents Runway Kids Fashion Week
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-charcoal-muted leading-relaxed px-2">
             Glimpses of our official categories from <strong className="text-pink-primary">Jashn Realty Presents Runway Kids Fashion Week 2026</strong>. Tap or hover over the rotating circle to pause and inspect.

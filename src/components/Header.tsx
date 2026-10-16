@@ -25,11 +25,11 @@ export default function Header() {
                 JASHN REALTY &bull; LUCKNOW 2026
               </span>
               <span className="text-xs sm:text-xs font-bold uppercase tracking-wider text-pink-dark">
-                JASHN REALTY PRESENTS RUNWAY KIDS FASHION WEEK 2026 — OFFICIAL REGISTRATIONS &amp; SOCIAL VOTING OPEN — FINALE ON 14TH NOV
+                JASHN REALTY PRESENTS RUNWAY KIDS FASHION WEEK 2026 — OFFICIAL REGISTRATIONS &amp; SOCIAL VOTING OPEN — GRAND FINALE DATE ANNOUNCING SOON
               </span>
               <span className="mx-5 text-pink-primary font-black text-sm">&bull;</span>
               <span className="text-xs sm:text-xs font-bold uppercase tracking-wider text-charcoal">
-                FREE NOMINATION &bull; AUDITION AT JASHN REALTY (26 OCT) &bull; CASH PRIZE ₹11,000 WITH GIFT HAMPER
+                FREE NOMINATION (20–31 OCT) &bull; 1ST AUDITION @ JASHN REALTY (01 NOV) &bull; CASH PRIZE ₹11,000 WITH GIFT HAMPER
               </span>
               <span className="mx-5 text-pink-primary font-black text-sm">&bull;</span>
             </div>
@@ -199,7 +199,7 @@ export default function Header() {
             <span className="block text-[10px] font-extrabold uppercase tracking-wider text-charcoal">
               Free nomination
             </span>
-            <span className="block text-[10px] text-charcoal-muted">Finale · 14 Nov</span>
+            <span className="block text-[10px] text-charcoal-muted">Grand Finale · Announcing Soon</span>
           </div>
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLScLhiYtE6aWKlI-T3tou7OzfVQVucW4uxHgf8Q7P5bLI4JKLw/viewform"

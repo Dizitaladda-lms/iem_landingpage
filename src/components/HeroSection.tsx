@@ -12,8 +12,8 @@ export default function HeroSection() {
   });
 
   useEffect(() => {
-    // Target: Finale Date Nov 14, 2026
-    const targetDate = new Date("2026-11-14T10:00:00").getTime();
+    // Target: 1st Mega Audition Nov 01, 2026 @ Jashn Realty
+    const targetDate = new Date("2026-11-01T10:00:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -128,13 +128,13 @@ export default function HeroSection() {
                 </div>
               </div>
               <div className="bg-white p-2.5 sm:p-3 rounded border border-border-pink">
-                <div className="text-xl font-serif font-black text-charcoal">26 OCT</div>
+                <div className="text-xl font-serif font-black text-charcoal">01 NOV</div>
                 <div className="text-[10px] font-bold uppercase tracking-wider text-charcoal-muted">
-                  Mega Audition
+                  1st Audition @ Jashn
                 </div>
               </div>
               <div className="bg-white p-2.5 sm:p-3 rounded border border-border-pink">
-                <div className="text-xl font-serif font-black text-pink-primary">14 NOV</div>
+                <div className="text-base sm:text-lg font-serif font-black text-pink-primary whitespace-nowrap">COMING SOON</div>
                 <div className="text-[10px] font-bold uppercase tracking-wider text-charcoal-muted">
                   Grand Finale
                 </div>
@@ -154,19 +154,19 @@ export default function HeroSection() {
                     OFFICIAL EVENT BRIEF
                   </span>
                   <h3 className="text-lg sm:text-xl font-serif font-bold text-charcoal mt-2">
-                    Grand Children&apos;s Day Finale
+                    1st Mega Audition &amp; Screening
                   </h3>
                 </div>
                 <div className="text-left sm:text-right">
-                  <span className="text-xs font-bold text-charcoal block">14 Nov 2026</span>
-                  <span className="text-[11px] font-medium text-charcoal-muted">Lucknow, UP</span>
+                  <span className="text-xs font-bold text-charcoal block">01 Nov 2026</span>
+                  <span className="text-[11px] font-medium text-charcoal-muted">Jashn Realty, Lucknow</span>
                 </div>
               </div>
 
               {/* Countdown Clock Display - Solid blocks, no gradients */}
               <div className="py-5">
                 <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-charcoal-muted mb-3 text-center">
-                  COUNTDOWN TO THE RUNWAY FINALE
+                  COUNTDOWN TO 1ST MEGA AUDITION @ JASHN REALTY
                 </div>
                 <div className="grid grid-cols-4 gap-2 text-center">
                   <div className="bg-surface border border-border-pink p-2 sm:p-2.5 rounded">
