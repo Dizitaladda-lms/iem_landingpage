@@ -125,125 +125,148 @@ export default function RegistrationFormSection() {
               </div>
             </div>
           ) : (
-            /* POST-SUBMISSION CUSTOM THANK YOU & JASHN REALTY SPONSOR CARD */
+            /* POST-SUBMISSION OFFICIAL JASHN REALTY & JASHN ELEVATE FESTIVE THANK YOU CARD */
             <div
               id="thank-you-section"
-              className="bg-white border-2 border-border-pink rounded-2xl p-6 sm:p-12 shadow-xl text-center animate-in fade-in zoom-in-95 duration-500 max-w-4xl mx-auto"
+              className="bg-white border-2 border-border-pink rounded-3xl p-6 sm:p-12 shadow-2xl text-center animate-in fade-in zoom-in-95 duration-500 max-w-3xl mx-auto relative overflow-hidden"
             >
-              {/* Festive Confetti Icon */}
-              <div className="w-20 h-20 mx-auto mb-5 rounded-full bg-pink-soft border-2 border-gold flex items-center justify-center text-3xl shadow-inner">
+              {/* Top Accent Strip with Jashn Realty Brand Color */}
+              <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-[#112266] via-[#2e2c75] to-[#D4AF37]" />
+
+              {/* Festive Celebration Icon */}
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-pink-soft border-2 border-gold flex items-center justify-center text-3xl shadow-inner">
                 🎉
               </div>
 
-              {/* Heading */}
+              {/* Main Heading */}
               <h3 className="font-serif text-2xl sm:text-4xl font-black text-charcoal tracking-tight">
-                Thank you for filling this form! 🎉
+                Thank You for Registering!
               </h3>
 
-              {/* Short message */}
-              <p className="mt-3 text-sm sm:text-base text-charcoal-muted font-medium max-w-xl mx-auto">
-                Your response has been recorded. Our team will verify your nomination details and share your audition slot &amp; official voting card via WhatsApp.
+              {/* Subheading acknowledgment */}
+              <p className="mt-2 text-sm sm:text-base text-charcoal font-semibold max-w-xl mx-auto">
+                Thank you for being part of <strong className="text-pink-primary">Jashn Realty Presents RUNWAY – KIDS FASHION WEEK</strong>.
               </p>
 
-              {/* SPONSORS SECTION */}
-              <div className="mt-12 pt-10 border-t border-border-pink">
-                <div className="inline-block px-3.5 py-1 bg-surface border border-gold/70 text-[10px] font-extrabold uppercase tracking-widest text-[#2e2c75] rounded-full mb-3 shadow-sm">
-                  POWERED BY JASHN REALTY &bull; OFFICIAL SPONSORS
+              {/* LUXURY JASHN ELEVATE FESTIVE OFFERS SHOWCASE CARD */}
+              <div className="mt-8 bg-gradient-to-br from-[#0c1947] via-[#112266] to-[#1c2c6e] text-white rounded-2xl p-6 sm:p-8 border-2 border-gold/70 shadow-2xl relative overflow-hidden text-left">
+                {/* Background decorative gold glow */}
+                <div className="absolute -top-12 -right-12 w-48 h-48 bg-gold/15 rounded-full blur-2xl pointer-events-none" />
+
+                {/* Card Header: Jashn Realty Logo & Badge */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-white/15">
+                  <div className="h-12 w-40 bg-white rounded-lg p-2 flex items-center justify-center shadow">
+                    <img
+                      src="https://cdn.jashnrealty.com/assets/v2/images/logo-blue.png?ver=9"
+                      alt="Jashn Realty"
+                      className="max-h-9 max-w-full object-contain"
+                    />
+                  </div>
+                  <span className="self-start sm:self-auto text-[10px] font-extrabold uppercase tracking-widest bg-gold text-[#112266] px-3 py-1 rounded-full shadow font-mono">
+                    EXCLUSIVE FESTIVE OFFERS
+                  </span>
                 </div>
 
-                <h4 className="font-serif text-2xl sm:text-3xl font-bold text-charcoal tracking-tight">
-                  Our Sponsors
-                </h4>
-                <p className="text-xs sm:text-sm text-charcoal-muted mt-1 max-w-md mx-auto">
-                  Heartfelt gratitude to our esteemed title and partner sponsors for supporting youth talent.
-                </p>
+                {/* Offer Lead Text */}
+                <div className="mt-5 mb-6">
+                  <h4 className="font-serif text-lg sm:text-xl font-bold text-[#F6E29C] leading-snug">
+                    Discover premium living at <span className="underline decoration-gold underline-offset-4 text-white">Jashn Elevate, Lucknow</span>, with our exclusive festive offers!
+                  </h4>
+                </div>
 
-                {/* Dynamic Sponsor Cards Grid */}
-                <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                  {sponsorsList.map((sponsor, idx) => (
-                    <div
-                      key={idx}
-                      className="group bg-surface border-2 border-border-pink hover:border-[#2e2c75] rounded-2xl p-6 flex flex-col items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl relative overflow-hidden text-center sm:col-span-2 lg:col-span-3 max-w-lg mx-auto w-full"
-                    >
-                      {/* Top Accent Strip with Jashn Realty brand color #2e2c75 */}
-                      <div className="absolute top-0 inset-x-0 h-2 bg-[#2e2c75]" />
-
-                      {/* Title Partner Badge */}
-                      <div className="inline-block px-3 py-1 bg-white border border-gold/70 text-[10px] font-extrabold uppercase tracking-widest text-[#2e2c75] rounded-full mb-3 mt-1 shadow-sm">
-                        OFFICIAL TITLE PARTNER &bull; MEGA AUDITION VENUE
-                      </div>
-
-                      {/* Sponsor Logo / Fallback to Name */}
-                      <div className="w-full h-28 flex items-center justify-center mb-4 p-4 bg-white rounded-xl border border-border-pink shadow-sm">
-                        {sponsor.logo ? (
-                          <img
-                            src={sponsor.logo}
-                            alt={sponsor.name}
-                            className="max-h-20 max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-105"
-                          />
-                        ) : (
-                          <span className="font-serif font-black text-2xl text-[#2e2c75]">
-                            {sponsor.name}
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Sponsor Name & Tagline */}
-                      <h5 className="font-serif font-black text-xl text-charcoal mb-1">
-                        {sponsor.name}
-                      </h5>
-                      <p className="text-xs text-charcoal-muted leading-relaxed mb-4 max-w-sm">
-                        Hosting the <strong>1st Mega Audition &amp; Screening</strong> on <strong>01st Nov 2026</strong> at Jashn Realty, Lucknow. Discovering and empowering young stars!
-                      </p>
-
-                      {/* Action Buttons */}
-                      <div className="w-full space-y-2.5">
-                        <a
-                          href={sponsor.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full py-3 px-5 text-center text-xs font-extrabold uppercase tracking-widest text-white bg-[#2e2c75] hover:bg-[#1f1d53] rounded-lg shadow-md transition-all duration-200 flex items-center justify-center gap-2"
-                        >
-                          <span>Visit Jashn Realty Official Website</span>
-                          <span className="transition-transform duration-200 group-hover:translate-x-1">
-                            &rarr;
-                          </span>
-                        </a>
-                        <a
-                          href={`https://wa.me/?text=${encodeURIComponent(
-                            "I just registered for Jashn Realty Presents Runway Kids Fashion Week 2026 (IEM × AdOnMo)! 1st Mega Audition on 01 Nov @ Jashn Realty, Lucknow. Check details here: " +
-                              (typeof window !== "undefined" ? window.location.href : "")
-                          )}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full py-2.5 px-4 text-center text-xs font-bold uppercase tracking-wider text-pink-dark bg-white border border-border-pink hover:bg-pink-soft rounded-lg transition-colors flex items-center justify-center gap-2"
-                        >
-                          <span>Share Nomination on WhatsApp</span>
-                        </a>
-                      </div>
+                {/* 4 Key Offers Bullet Grid */}
+                <div className="space-y-3.5">
+                  <div className="flex items-start gap-3 bg-white/10 hover:bg-white/15 p-3 rounded-xl border border-white/10 transition-colors">
+                    <span className="text-xl shrink-0">✨</span>
+                    <div className="text-xs sm:text-sm text-white/95 leading-snug">
+                      <strong className="text-gold font-bold">10:90 Payment Plan</strong> &ndash; First Time in Lucknow
                     </div>
-                  ))}
+                  </div>
+
+                  <div className="flex items-start gap-3 bg-white/10 hover:bg-white/15 p-3 rounded-xl border border-white/10 transition-colors">
+                    <span className="text-xl shrink-0">🥇</span>
+                    <div className="text-xs sm:text-sm text-white/95 leading-snug">
+                      <strong className="text-gold font-bold">Get Up to 40g of Gold</strong> on Your Dream Home
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 bg-white/10 hover:bg-white/15 p-3 rounded-xl border border-white/10 transition-colors">
+                    <span className="text-xl shrink-0">🎁</span>
+                    <div className="text-xs sm:text-sm text-white/95 leading-snug">
+                      <strong className="text-gold font-bold">Win Assured Gifts Worth Up to 1 Lakh</strong> with the Spin the Wheel
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 bg-white/10 hover:bg-white/15 p-3 rounded-xl border border-white/10 transition-colors">
+                    <span className="text-xl shrink-0">📱</span>
+                    <div className="text-xs sm:text-sm text-white/95 leading-snug">
+                      <strong className="text-gold font-bold">Stand a Chance to Win an iPhone 17</strong> with the Push the Buzzer challenge!
+                    </div>
+                  </div>
                 </div>
 
-                {/* Reset/Submit Another Response Link */}
-                <div className="mt-10 pt-6 border-t border-dashed border-border-pink flex flex-wrap items-center justify-center gap-4">
+                {/* Explore More CTA Button */}
+                <div className="mt-7 pt-5 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div>
+                    <span className="text-xs text-white/80 block">Explore More Offers:</span>
+                    <a
+                      href="https://shorturl.at/iefKV"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs sm:text-sm font-bold text-gold hover:text-white underline underline-offset-2 break-all"
+                    >
+                      https://shorturl.at/iefKV
+                    </a>
+                  </div>
+
+                  <a
+                    href="https://shorturl.at/iefKV"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto px-6 py-3 text-center text-xs font-black uppercase tracking-widest text-[#112266] bg-gold hover:bg-[#F6E29C] rounded-lg shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <span>Claim Festive Offers</span>
+                    <span>&rarr;</span>
+                  </a>
+                </div>
+
+                {/* Bottom Tagline */}
+                <div className="mt-5 text-center sm:text-left text-xs font-serif font-black tracking-widest text-[#F6E29C] uppercase pt-3 border-t border-white/10">
+                  Your Dream Home. Extraordinary Rewards.
+                </div>
+              </div>
+
+              {/* Audition Details & Actions */}
+              <div className="mt-8 pt-6 border-t border-border-pink flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-charcoal-muted">
+                <div className="text-center sm:text-left">
+                  <span className="font-bold text-charcoal block">1st Mega Audition &amp; Screening:</span>
+                  <span>01 Nov 2026 @ Jashn Realty, Lucknow</span>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(
+                      "*Thank You for Registering!*\n\nThank you for being part of *Jashn Realty Presents RUNWAY – KIDS FASHION WEEK.*\n\nDiscover premium living at *Jashn Elevate, Lucknow*, with our exclusive festive offers!\n\n✨ *10:90 Payment Plan* – First Time in Lucknow\n🥇 *Get Up to 40g of Gold* on Your Dream Home\n🎁 *Win Assured Gifts Worth Up to 1 Lakh* with the Spin the Wheel\n📱 *Stand a Chance to Win an iPhone 17* with the Push the Buzzer challenge!\n\n*Explore More:* https://shorturl.at/iefKV\n\nYour Dream Home. Extraordinary Rewards."
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-pink-dark bg-white border border-border-pink hover:bg-pink-soft rounded-lg transition-colors flex items-center gap-2 shadow-sm"
+                  >
+                    <span>Share on WhatsApp</span>
+                  </a>
+
                   <button
                     onClick={() => {
                       setIframeLoadCount(0);
                       setIsFormSubmitted(false);
                     }}
-                    className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-charcoal bg-surface border border-border-pink hover:bg-white rounded-lg transition-colors"
+                    className="px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-charcoal bg-surface border border-border-pink hover:bg-white rounded-lg transition-colors"
                   >
-                    &larr; Submit Another Response or Reopen Form
+                    Submit Another Entry
                   </button>
-                  <a
-                    href="#schedule"
-                    className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-pink-primary hover:bg-pink-dark rounded-lg transition-colors"
-                  >
-                    View Audition Schedule &rarr;
-                  </a>
                 </div>
               </div>
+
             </div>
           )}
         </div>
