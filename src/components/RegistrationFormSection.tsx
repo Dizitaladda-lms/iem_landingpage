@@ -169,26 +169,52 @@ export default function RegistrationFormSection() {
           </div>
 
           {/* View Mode Toggle Buttons */}
-          <div className="flex bg-surface p-1 rounded-lg border border-border-pink shrink-0">
+          <div className="flex flex-wrap items-center bg-surface p-1 rounded-lg border border-border-pink shrink-0 gap-1">
             <button
-              onClick={() => setActiveTab("google_form")}
-              className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md transition-all ${
-                activeTab === "google_form"
+              onClick={() => {
+                setActiveTab("google_form");
+                setIsFormSubmitted(false);
+              }}
+              className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider rounded-md transition-all ${
+                activeTab === "google_form" && !isFormSubmitted
                   ? "bg-pink-primary text-white shadow-sm"
                   : "text-charcoal hover:text-pink-primary"
               }`}
             >
-              Official Google Form
+              Google Form
+            </button>
+            <button
+              onClick={() => {
+                setActiveTab("google_form");
+                setIsFormSubmitted(true);
+                try {
+                  confetti({
+                    particleCount: 110,
+                    spread: 80,
+                    origin: { y: 0.6 },
+                    colors: ["#2e2c75", "#D4AF37", "#F6E29C", "#112266", "#FFFFFF"],
+                  });
+                } catch {
+                  // ignore
+                }
+              }}
+              className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider rounded-md transition-all ${
+                activeTab === "google_form" && isFormSubmitted
+                  ? "bg-[#2e2c75] text-white shadow-sm"
+                  : "text-[#2e2c75] hover:bg-pink-soft font-extrabold"
+              }`}
+            >
+              Preview Jashn Realty Card
             </button>
             <button
               onClick={() => setActiveTab("card_preview")}
-              className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md transition-all ${
+              className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider rounded-md transition-all ${
                 activeTab === "card_preview"
                   ? "bg-pink-primary text-white shadow-sm"
                   : "text-charcoal hover:text-pink-primary"
               }`}
             >
-              Social Voting Card Preview
+              Voting Card Preview
             </button>
           </div>
         </div>
@@ -226,6 +252,32 @@ export default function RegistrationFormSection() {
                     Loading registration form…
                   </iframe>
                 </div>
+
+                {/* Instant Submission Confirmation Action Bar */}
+                <div className="mt-4 pt-4 border-t border-border-pink flex flex-col sm:flex-row items-center justify-between gap-3 bg-white p-4 rounded-xl border">
+                  <div className="text-xs text-charcoal">
+                    <strong className="text-pink-primary font-bold">Done filling the form?</strong> Click here to confirm your response and view the official Jashn Realty Thank You card.
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsFormSubmitted(true);
+                      try {
+                        confetti({
+                          particleCount: 120,
+                          spread: 80,
+                          origin: { y: 0.6 },
+                          colors: ["#2e2c75", "#D4AF37", "#F6E29C", "#112266", "#FFFFFF"],
+                        });
+                      } catch {
+                        // ignore
+                      }
+                    }}
+                    className="shrink-0 px-6 py-3 text-xs font-extrabold uppercase tracking-widest text-white bg-[#2e2c75] hover:bg-[#1f1d53] rounded-lg shadow-md transition-all active:scale-95 flex items-center gap-2"
+                  >
+                    <span>I Have Submitted Form &rarr;</span>
+                  </button>
+                </div>
               </div>
             ) : (
               /* POST-SUBMISSION CUSTOM THANK YOU & SPONSOR SHOWCASE */
@@ -262,62 +314,89 @@ export default function RegistrationFormSection() {
                   </p>
 
                   {/* Dynamic Sponsor Cards Grid */}
-                  <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                  <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
                     {sponsorsList.map((sponsor, idx) => (
                       <div
                         key={idx}
-                        className="group bg-surface border border-border-pink hover:border-[#2e2c75] rounded-xl p-6 flex flex-col items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative overflow-hidden text-center"
+                        className="group bg-surface border-2 border-border-pink hover:border-[#2e2c75] rounded-2xl p-6 flex flex-col items-center justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl relative overflow-hidden text-center sm:col-span-2 lg:col-span-3 max-w-lg mx-auto w-full"
                       >
                         {/* Top Accent Strip with Jashn Realty brand color #2e2c75 */}
-                        <div className="absolute top-0 inset-x-0 h-1.5 bg-[#2e2c75]" />
+                        <div className="absolute top-0 inset-x-0 h-2 bg-[#2e2c75]" />
+
+                        {/* Title Partner Badge */}
+                        <div className="inline-block px-3 py-1 bg-white border border-gold/70 text-[10px] font-extrabold uppercase tracking-widest text-[#2e2c75] rounded-full mb-3 mt-1 shadow-sm">
+                          OFFICIAL TITLE PARTNER &bull; MEGA AUDITION VENUE
+                        </div>
 
                         {/* Sponsor Logo / Fallback to Name */}
-                        <div className="w-full h-24 flex items-center justify-center mb-4 p-3 bg-white rounded-lg border border-border-pink">
+                        <div className="w-full h-28 flex items-center justify-center mb-4 p-4 bg-white rounded-xl border border-border-pink shadow-sm">
                           {sponsor.logo ? (
                             <img
                               src={sponsor.logo}
                               alt={sponsor.name}
-                              className="max-h-16 max-w-[170px] object-contain transition-transform duration-300 group-hover:scale-105"
+                              className="max-h-20 max-w-[220px] object-contain transition-transform duration-300 group-hover:scale-105"
                             />
                           ) : (
-                            <span className="font-serif font-black text-lg text-[#2e2c75]">
+                            <span className="font-serif font-black text-2xl text-[#2e2c75]">
                               {sponsor.name}
                             </span>
                           )}
                         </div>
 
-                        {/* Sponsor Name */}
-                        <h5 className="font-serif font-bold text-base text-charcoal mb-4">
+                        {/* Sponsor Name & Tagline */}
+                        <h5 className="font-serif font-black text-xl text-charcoal mb-1">
                           {sponsor.name}
                         </h5>
+                        <p className="text-xs text-charcoal-muted leading-relaxed mb-4 max-w-sm">
+                          Hosting the <strong>1st Mega Audition &amp; Screening</strong> on <strong>01st Nov 2026</strong> at Jashn Realty, Lucknow. Discovering and empowering young stars!
+                        </p>
 
-                        {/* Visit Website Button */}
-                        <a
-                          href={sponsor.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full py-2.5 px-4 text-center text-xs font-extrabold uppercase tracking-wider text-white bg-[#2e2c75] hover:bg-[#1f1d53] rounded-lg shadow-sm transition-all duration-200 flex items-center justify-center gap-1.5"
-                        >
-                          <span>Visit Website</span>
-                          <span className="transition-transform duration-200 group-hover:translate-x-1">
-                            &rarr;
-                          </span>
-                        </a>
+                        {/* Action Buttons */}
+                        <div className="w-full space-y-2.5">
+                          <a
+                            href={sponsor.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full py-3 px-5 text-center text-xs font-extrabold uppercase tracking-widest text-white bg-[#2e2c75] hover:bg-[#1f1d53] rounded-lg shadow-md transition-all duration-200 flex items-center justify-center gap-2"
+                          >
+                            <span>Visit Jashn Realty Official Website</span>
+                            <span className="transition-transform duration-200 group-hover:translate-x-1">
+                              &rarr;
+                            </span>
+                          </a>
+                          <a
+                            href={`https://wa.me/?text=${encodeURIComponent(
+                              "I just registered for Jashn Realty Presents Runway Kids Fashion Week 2026 (IEM × AdOnMo)! 1st Mega Audition on 01 Nov @ Jashn Realty, Lucknow. Check details here: " +
+                                (typeof window !== "undefined" ? window.location.href : "")
+                            )}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full py-2.5 px-4 text-center text-xs font-bold uppercase tracking-wider text-pink-dark bg-white border border-border-pink hover:bg-pink-soft rounded-lg transition-colors flex items-center justify-center gap-2"
+                          >
+                            <span>Share Nomination on WhatsApp</span>
+                          </a>
+                        </div>
                       </div>
                     ))}
                   </div>
 
                   {/* Reset/Submit Another Response Link */}
-                  <div className="mt-10 pt-6 border-t border-dashed border-border-pink">
+                  <div className="mt-10 pt-6 border-t border-dashed border-border-pink flex flex-wrap items-center justify-center gap-4">
                     <button
                       onClick={() => {
                         setIframeLoadCount(0);
                         setIsFormSubmitted(false);
                       }}
-                      className="text-xs font-bold uppercase tracking-wider text-pink-primary hover:text-pink-dark transition-colors"
+                      className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-charcoal bg-surface border border-border-pink hover:bg-white rounded-lg transition-colors"
                     >
                       &larr; Submit Another Response or Reopen Form
                     </button>
+                    <a
+                      href="#schedule"
+                      className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-pink-primary hover:bg-pink-dark rounded-lg transition-colors"
+                    >
+                      View Audition Schedule &rarr;
+                    </a>
                   </div>
                 </div>
               </div>
