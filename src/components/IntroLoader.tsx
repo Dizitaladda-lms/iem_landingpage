@@ -24,7 +24,17 @@ export default function IntroLoader() {
     const t2 = setTimeout(() => setStage(1), 3400);
     const t3 = setTimeout(() => setStage(2), 5000);
     const t4 = setTimeout(() => setStage("exit"), 6600);
-    const t5 = setTimeout(() => setStage("done"), 7300);
+    const t5 = setTimeout(() => {
+      setStage("done");
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new CustomEvent("iem_intro_completed"));
+        try {
+          sessionStorage.setItem("iem_intro_finished", "true");
+        } catch {
+          // ignore
+        }
+      }
+    }, 7300);
 
     return () => {
       clearTimeout(t1);

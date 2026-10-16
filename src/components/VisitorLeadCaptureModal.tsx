@@ -19,13 +19,38 @@ export default function VisitorLeadCaptureModal() {
     // Check if visitor has already filled or dismissed the capture modal
     try {
       const alreadyCaptured = localStorage.getItem("iem_visitor_captured");
-      if (!alreadyCaptured) {
-        // Show after a 2.5-second welcoming delay so intro finishes smoothly
+      const alreadyDismissed = sessionStorage.getItem("iem_visitor_dismissed");
+      if (alreadyCaptured || alreadyDismissed) {
+        return;
+      }
+
+      const openModalGracefully = () => {
+        // Wait 1.2s after intro transition has fully exited screen
+        setTimeout(() => {
+          setIsOpen(true);
+        }, 1200);
+      };
+
+      // If intro has already completed previously in this session
+      if (sessionStorage.getItem("iem_intro_finished") === "true") {
         const timer = setTimeout(() => {
           setIsOpen(true);
-        }, 2500);
+        }, 2000);
         return () => clearTimeout(timer);
       }
+
+      // Listen for the custom event fired when the intro animation and loader finish
+      window.addEventListener("iem_intro_completed", openModalGracefully, { once: true });
+
+      // Fallback timer (8.5s) to guarantee popup only appears after the 7.3s loader
+      const fallbackTimer = setTimeout(() => {
+        setIsOpen(true);
+      }, 8500);
+
+      return () => {
+        window.removeEventListener("iem_intro_completed", openModalGracefully);
+        clearTimeout(fallbackTimer);
+      };
     } catch {
       // In case localStorage is blocked in private/restricted mode
     }
