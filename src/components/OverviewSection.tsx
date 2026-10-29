@@ -43,8 +43,8 @@ export default function OverviewSection() {
             Nurturing Young Stars, Celebrating Individuality
           </h2>
           <p className="mt-3 text-sm sm:text-base text-charcoal-muted leading-relaxed">
-            <strong className="text-pink-primary font-semibold">Jashn Realty Presents Runway Kids Fashion Week 2026</strong> is a multi-day celebration of style, confidence, and creativity for children. 
-            It provides a glamorous, respectful platform for kids of all age groups to shine on the runway — 
+            <strong className="text-pink-primary font-semibold">Jashn Realty Presents Runway Kids Fashion Week 2026</strong> is a premier celebration of style, confidence, and creativity for children. 
+            Building on our triumphant past edition at <strong className="text-pink-primary font-semibold">Phoenix United, Bareilly</strong>, this grand season provides a glamorous, respectful platform for kids of all age groups to shine on the runway — 
             from newborns in strollers to energetic pre-teens — while giving brands and designers 
             a dedicated stage in the kidswear segment.
           </p>

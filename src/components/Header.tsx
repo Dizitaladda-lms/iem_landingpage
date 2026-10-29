@@ -57,6 +57,13 @@ export default function Header() {
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6">
             <a
+              href="#gallery"
+              className="text-[11px] xl:text-xs font-bold text-navy hover:text-pink-primary uppercase tracking-wider whitespace-nowrap transition-colors flex items-center gap-1.5"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+              Bareilly Highlights
+            </a>
+            <a
               href="#overview"
               className="text-[11px] xl:text-xs font-bold text-charcoal hover:text-pink-primary uppercase tracking-wider whitespace-nowrap transition-colors"
             >
@@ -131,6 +138,14 @@ export default function Header() {
       {mobileMenuOpen && (
         <nav id="mobile-navigation" aria-label="Mobile navigation" className="lg:hidden bg-surface border-t border-border-pink px-4 pt-3 pb-6 space-y-3">
           <a
+            href="#gallery"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center justify-between text-sm font-bold text-navy py-2 border-b border-border-pink uppercase tracking-wider"
+          >
+            <span>Bareilly Edition Highlights</span>
+            <span className="text-[10px] bg-gold/20 text-navy font-extrabold px-2 py-0.5 rounded-full border border-gold/40">Proof</span>
+          </a>
+          <a
             href="#overview"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-sm font-bold text-charcoal py-2 border-b border-border-pink uppercase tracking-wider"
@@ -192,26 +207,6 @@ export default function Header() {
           </div>
         </nav>
       )}
-
-      <div className="fixed inset-x-0 bottom-0 z-[60] border-t border-border-pink bg-white/95 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_rgba(28,25,23,0.08)] backdrop-blur md:hidden">
-        <div className="mx-auto flex max-w-lg items-center justify-between gap-3">
-          <div className="min-w-0">
-            <span className="block text-[10px] font-extrabold uppercase tracking-wider text-charcoal">
-              Free nomination
-            </span>
-            <span className="block text-[10px] text-charcoal-muted">Grand Finale · Announcing Soon</span>
-          </div>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScLhiYtE6aWKlI-T3tou7OzfVQVucW4uxHgf8Q7P5bLI4JKLw/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMobileMenuOpen(false)}
-            className="rounded-lg bg-pink-primary px-5 py-3 text-center text-[11px] font-extrabold uppercase tracking-wider text-white shadow-sm transition hover:bg-pink-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-primary"
-          >
-            Nominate your child
-          </a>
-        </div>
-      </div>
     </header>
   );
 }

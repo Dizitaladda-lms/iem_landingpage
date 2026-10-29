@@ -17,7 +17,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-white pb-24 text-charcoal md:pb-0">
-      {/* 0. Initial Brand Loader + 3 Sequential Category Images Showcase */}
+      {/* 0. Initial Brand Loader + Official Event Poster Showcase */}
       <IntroLoader />
 
       {/* 0B. Site-Wide Visitor Lead Capture Modal for IEM Organizer Data */}
