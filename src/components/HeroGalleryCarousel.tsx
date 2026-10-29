@@ -6,13 +6,45 @@ import React, { useEffect, useRef, useState } from "react";
 const slides = [
   {
     id: 1,
+    image: "/images/bareilly-grand-stage.jpg",
+    alt: "Grand runway stage setup at Phoenix United Mall Bareilly",
+    step: "01",
+    tag: "CONCERT-GRADE SETUP",
+    title: "Official Grand Runway Stage in Mall Atrium",
+    subtitle: "Real Glimpses from Phoenix United, Bareilly",
+    desc: "A massive multi-level runway stage built inside the central atrium of Phoenix United with concert-grade sound towers, live rock band instruments, LED screens, and international runway specifications.",
+    highlights: [
+      "Concert-Grade Acoustic Sound & Lights",
+      "Full Atrium Multi-Level Runway Ramp",
+      "Live Musical Performance Stage Setup",
+    ],
+    venue: "Phoenix United, Bareilly",
+  },
+  {
+    id: 2,
+    image: "/images/bareilly-massive-crowd.jpg",
+    alt: "Massive packed house audience cheering at Phoenix United Bareilly",
+    step: "02",
+    tag: "HOUSE-FULL AUDIENCE",
+    title: "Hundreds of Cheering Families & Mall Crowds",
+    subtitle: "Real Glimpses from Phoenix United, Bareilly",
+    desc: "A roaring, packed-house turnout where parents, mall visitors, and brand sponsors gathered all around the red carpet to cheer for every single young contestant as our celebrity anchor hosted live on stage.",
+    highlights: [
+      "100+ Families In Live Audience",
+      "Celebrity Anchor & Live Mic Interaction",
+      "Electrifying Mall Footfall & Support",
+    ],
+    venue: "Phoenix United, Bareilly",
+  },
+  {
+    id: 3,
     image: "/images/bareilly-doctor-kid.jpg",
     alt: "Toddler dressed as doctor on red carpet at Phoenix United Bareilly",
-    step: "01",
+    step: "03",
     tag: "THEMED TALENT ROUND",
     title: "Fearless Stage Confidence From Day One",
     subtitle: "Real Glimpses from Phoenix United, Bareilly",
-    desc: "Our unique thematic rounds give toddlers and young kids the freedom to express their dreams — like this little doctor rocking the microphone on the Phoenix United red carpet with pure charisma, joy, and zero stage fright.",
+    desc: "Our unique thematic rounds give toddlers and kids freedom to express their dreams — like this little doctor rocking the microphone on the Phoenix United red carpet with pure charisma, joy, and zero stage fright.",
     highlights: [
       "Fun Roleplay & Creative Costumes",
       "Live Microphone Speaking Round",
@@ -21,10 +53,10 @@ const slides = [
     venue: "Phoenix United, Bareilly",
   },
   {
-    id: 2,
+    id: 4,
     image: "/images/bareilly-solo-girl.jpg",
     alt: "Young girl ramp walk with microphone at Phoenix United Bareilly",
-    step: "02",
+    step: "04",
     tag: "INDEPENDENT RAMP WALK",
     title: "Poise, Grace & Live Microphone Presentation",
     subtitle: "Real Glimpses from Phoenix United, Bareilly",
@@ -37,10 +69,10 @@ const slides = [
     venue: "Phoenix United, Bareilly",
   },
   {
-    id: 3,
+    id: 5,
     image: "/images/bareilly-judges-panel.jpg",
     alt: "Eminent jury panel evaluating contestants at Phoenix United Bareilly",
-    step: "03",
+    step: "05",
     tag: "EMINENT JURY EVALUATION",
     title: "Fair, Constructive & Celebrated Evaluation",
     subtitle: "Real Glimpses from Phoenix United, Bareilly",
@@ -53,10 +85,42 @@ const slides = [
     venue: "Phoenix United, Bareilly",
   },
   {
-    id: 4,
+    id: 6,
+    image: "/images/bareilly-vr-entertainment.jpg",
+    alt: "Kids and parents enjoying 4D VR dynamic rides at Phoenix United Bareilly",
+    step: "06",
+    tag: "4D VR ENTERTAINMENT",
+    title: "Thrilling 4D Virtual Reality Rides for Kids",
+    subtitle: "Real Glimpses from Phoenix United, Bareilly",
+    desc: "More than just a fashion show — participants and mothers strapped in for thrilling 4D Virtual Reality jungle adventures, making the entire event tour an unforgettable holiday memory for the whole family.",
+    highlights: [
+      "Full-Motion 4D VR Gaming Seats",
+      "Exclusive Entertainment Pass for Kids",
+      "Unforgettable Family Holiday Memories",
+    ],
+    venue: "Phoenix United, Bareilly",
+  },
+  {
+    id: 7,
+    image: "/images/bareilly-arcade-games.jpg",
+    alt: "Father and kids playing arcade racing games at Phoenix United Bareilly",
+    step: "07",
+    tag: "FAMILY BONDING MOMENTS",
+    title: "Arcade Racing, Joy & Big Family Smiles",
+    subtitle: "Real Glimpses from Phoenix United, Bareilly",
+    desc: "Bursting with pure laughter as fathers, mothers, and kids raced side-by-side on arcade bikes and gaming zones in the mall, celebrating togetherness at every milestone of the competition.",
+    highlights: [
+      "Fun Parent-Child Bonding Activities",
+      "Stress-Free, Celebratory Atmosphere",
+      "Smiles, Friendship & Good Spirits",
+    ],
+    venue: "Phoenix United, Bareilly",
+  },
+  {
+    id: 8,
     image: "/images/bareilly-grand-award.jpg",
     alt: "Grand stage felicitation with ₹15,000 gift voucher at Phoenix United Bareilly",
-    step: "04",
+    step: "08",
     tag: "GRAND FINALE FELICITATION",
     title: "Real Cash Prizes, Trophies & Brand Gift Vouchers",
     subtitle: "Real Glimpses from Phoenix United, Bareilly",
@@ -86,7 +150,7 @@ export default function HeroGalleryCarousel() {
       const p = Math.max(0, Math.min(1, currentScroll / totalScroll));
       setProgress(p);
 
-      // Distribute evenly across slides
+      // Distribute evenly across 8 slides
       const newIndex = Math.min(
         slides.length - 1,
         Math.floor(p * slides.length)
@@ -114,13 +178,13 @@ export default function HeroGalleryCarousel() {
       id="gallery"
       ref={containerRef}
       className="relative bg-white"
-      style={{ height: `${slides.length * 100}vh` }}
+      style={{ height: `${slides.length * 85}vh` }}
     >
       {/* Sticky Screen Pinned Wrapper */}
       <div className="sticky top-0 h-[100dvh] w-full overflow-hidden flex flex-col justify-between border-b border-border-pink bg-surface select-none">
         
         {/* Top Scroll Progress Line */}
-        <div className="w-full h-1 bg-border-pink/40 relative z-30">
+        <div className="w-full h-1.5 bg-border-pink/40 relative z-30">
           <div
             className="h-full bg-gradient-to-r from-gold via-pink-primary to-gold transition-all duration-150"
             style={{ width: `${Math.round(progress * 100)}%` }}
@@ -134,21 +198,45 @@ export default function HeroGalleryCarousel() {
         </div>
 
         {/* Main Sticky Grid Container */}
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex-1 flex items-center py-4 sm:py-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center w-full">
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex-1 flex items-center py-3 sm:py-5">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-10 items-center w-full">
             
             {/* LEFT SIDE: Dynamic Text & Storytelling Content */}
-            <div className="lg:col-span-6 xl:col-span-5 flex flex-col justify-center space-y-4 sm:space-y-5">
+            <div className="lg:col-span-6 xl:col-span-5 flex flex-col justify-center space-y-3 sm:space-y-4">
               
-              {/* Category Proof Pill */}
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-gold/70 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider text-pink-primary shadow-2xs">
-                  <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-                  <span>📍 {currentSlide.venue}</span>
-                </span>
-                <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-gold-dark bg-surface-card border border-border-pink px-2.5 py-1 rounded-full">
-                  {currentSlide.tag}
-                </span>
+              {/* Category Proof Pill & Prev/Next Controls */}
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-gold/70 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-wider text-pink-primary shadow-2xs">
+                    <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+                    <span>📍 {currentSlide.venue}</span>
+                  </span>
+                  <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-gold-dark bg-surface-card border border-border-pink px-2.5 py-1 rounded-full">
+                    {currentSlide.tag}
+                  </span>
+                </div>
+
+                {/* Quick Next / Prev Arrows */}
+                <div className="flex items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => scrollToSlide(Math.max(0, activeIndex - 1))}
+                    disabled={activeIndex === 0}
+                    className="w-7 h-7 rounded-full bg-white border border-border-pink text-charcoal hover:text-pink-primary disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center text-xs font-bold transition shadow-2xs"
+                    aria-label="Previous image"
+                  >
+                    ←
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => scrollToSlide(Math.min(slides.length - 1, activeIndex + 1))}
+                    disabled={activeIndex === slides.length - 1}
+                    className="w-7 h-7 rounded-full bg-white border border-border-pink text-charcoal hover:text-pink-primary disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center text-xs font-bold transition shadow-2xs"
+                    aria-label="Next image"
+                  >
+                    →
+                  </button>
+                </div>
               </div>
 
               {/* Step Counter */}
@@ -159,7 +247,7 @@ export default function HeroGalleryCarousel() {
                 <div className="h-8 w-px bg-border-pink" />
                 <div className="flex flex-col">
                   <span className="text-[10px] font-extrabold uppercase tracking-widest text-charcoal-muted">
-                    PREVIOUS EDITION GLIMPSE
+                    PREVIOUS EDITION PROOF
                   </span>
                   <span className="text-xs font-bold text-pink-primary">
                     MOMENT {activeIndex + 1} OF {slides.length}
@@ -168,8 +256,8 @@ export default function HeroGalleryCarousel() {
               </div>
 
               {/* Animated Title & Subtitle */}
-              <div className="space-y-2">
-                <h3 className="font-serif text-xl sm:text-2xl lg:text-3xl font-extrabold text-charcoal leading-tight">
+              <div className="space-y-1.5">
+                <h3 className="font-serif text-lg sm:text-2xl lg:text-3xl font-extrabold text-charcoal leading-tight">
                   {currentSlide.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
@@ -178,7 +266,7 @@ export default function HeroGalleryCarousel() {
               </div>
 
               {/* Highlights Checklist */}
-              <div className="space-y-2 pt-1">
+              <div className="space-y-1.5 pt-0.5">
                 {currentSlide.highlights.map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-charcoal">
                     <span className="w-4 h-4 rounded-full bg-pink-primary/10 text-pink-primary flex items-center justify-center text-[10px] font-black shrink-0">
@@ -189,9 +277,9 @@ export default function HeroGalleryCarousel() {
                 ))}
               </div>
 
-              {/* Interactive Step Navigator Dots */}
-              <div className="pt-3 border-t border-border-pink/70 flex items-center justify-between gap-4">
-                <div className="flex items-center gap-2">
+              {/* Interactive Step Navigator Pills (8 Dots) */}
+              <div className="pt-2 border-t border-border-pink/70 flex items-center justify-between gap-2">
+                <div className="flex items-center gap-1.5 flex-wrap">
                   {slides.map((s, idx) => {
                     const isActive = idx === activeIndex;
                     return (
@@ -199,19 +287,20 @@ export default function HeroGalleryCarousel() {
                         key={s.id}
                         type="button"
                         onClick={() => scrollToSlide(idx)}
-                        className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                        className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                           isActive
-                            ? "w-8 bg-pink-primary shadow-xs"
-                            : "w-2.5 bg-border-pink hover:bg-gold"
+                            ? "w-6 bg-pink-primary shadow-xs"
+                            : "w-2 bg-border-pink hover:bg-gold"
                         }`}
+                        title={`Moment ${idx + 1}: ${s.title}`}
                         aria-label={`Jump to slide ${idx + 1}`}
                       />
                     );
                   })}
                 </div>
 
-                <span className="text-[11px] font-bold text-charcoal-muted uppercase tracking-wider">
-                  Scroll to view all ↓
+                <span className="text-[10px] sm:text-[11px] font-bold text-charcoal-muted uppercase tracking-wider shrink-0">
+                  Scroll to view all 8 ↓
                 </span>
               </div>
 
@@ -221,7 +310,7 @@ export default function HeroGalleryCarousel() {
                   href="https://docs.google.com/forms/d/e/1FAIpQLScLhiYtE6aWKlI-T3tou7OzfVQVucW4uxHgf8Q7P5bLI4JKLw/viewform"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-white bg-pink-primary hover:bg-pink-dark transition-colors shadow-sm"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-white bg-pink-primary hover:bg-pink-dark transition-colors shadow-sm"
                 >
                   Nominate Your Child for Lucknow [Free Entry]
                 </a>
@@ -231,7 +320,7 @@ export default function HeroGalleryCarousel() {
 
             {/* RIGHT SIDE: Pinned Stacked Images (Change/Peel one by one on scroll) */}
             <div className="lg:col-span-6 xl:col-span-7 flex items-center justify-center">
-              <div className="relative w-full max-w-[560px] aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden border-2 border-gold/70 shadow-[0_25px_60px_-15px_rgba(17,34,102,0.45)] bg-slate-900">
+              <div className="relative w-full max-w-[580px] aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden border-2 border-gold/70 shadow-[0_25px_60px_-15px_rgba(17,34,102,0.45)] bg-slate-900">
                 
                 {slides.map((slide, idx) => {
                   const isActive = idx === activeIndex;
@@ -268,7 +357,7 @@ export default function HeroGalleryCarousel() {
                           alt={slide.alt}
                           fill
                           priority={idx < 2}
-                          sizes="(max-width: 768px) 94vw, (max-width: 1280px) 50vw, 560px"
+                          sizes="(max-width: 768px) 94vw, (max-width: 1280px) 50vw, 580px"
                           className="object-contain"
                         />
                       </div>
@@ -287,11 +376,11 @@ export default function HeroGalleryCarousel() {
                             {slide.title}
                           </p>
                           <p className="text-[10px] text-gold font-semibold uppercase tracking-wider mt-0.5">
-                            Moment {slide.step} of 04 &bull; {slide.tag}
+                            Moment {slide.step} of 08 &bull; {slide.tag}
                           </p>
                         </div>
                         <span className="hidden sm:inline-block px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wider rounded bg-white/20 text-white backdrop-blur-xs">
-                          Bareilly Season
+                          Bareilly Edition
                         </span>
                       </div>
 
@@ -310,13 +399,13 @@ export default function HeroGalleryCarousel() {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500" />
             <span className="font-semibold text-charcoal">
-              Verified Track Record: 100+ Kids Felicitated in Bareilly
+              Verified Track Record: Real Event Moments from Phoenix United, Bareilly
             </span>
           </div>
           <div className="font-bold text-pink-primary hidden sm:block">
             {activeIndex === slides.length - 1
               ? "Next: Lucknow 2026 Overview Section ↓"
-              : `Scroll down to see Moment ${activeIndex + 2} of 04 ↓`}
+              : `Scroll down to see Moment ${activeIndex + 2} of 08 ↓`}
           </div>
         </div>
 

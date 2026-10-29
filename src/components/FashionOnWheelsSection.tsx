@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 
 export default function FashionOnWheelsSection() {
@@ -84,7 +85,7 @@ export default function FashionOnWheelsSection() {
 
           {/* Right Column: Execution Card */}
           <div className="lg:col-span-5">
-            <div className="bg-surface border-2 border-border-pink rounded-xl p-8 space-y-6">
+            <div className="bg-surface border-2 border-border-pink rounded-xl p-6 sm:p-8 space-y-6">
               
               <div className="flex justify-between items-center pb-4 border-b border-border-pink">
                 <span className="text-xs font-black uppercase tracking-wider text-charcoal">
@@ -96,8 +97,8 @@ export default function FashionOnWheelsSection() {
               </div>
 
               {/* Blueprint details */}
-              <div className="space-y-4">
-                <div className="bg-white p-4 rounded border border-border-pink">
+              <div className="space-y-3.5">
+                <div className="bg-white p-3.5 rounded border border-border-pink shadow-2xs">
                   <div className="text-[11px] font-black text-pink-primary uppercase tracking-wider mb-1">
                     01 &bull; FULL-WRAP VINYL BRANDING
                   </div>
@@ -106,7 +107,7 @@ export default function FashionOnWheelsSection() {
                   </p>
                 </div>
 
-                <div className="bg-white p-4 rounded border border-border-pink">
+                <div className="bg-white p-3.5 rounded border border-border-pink shadow-2xs">
                   <div className="text-[11px] font-black text-pink-primary uppercase tracking-wider mb-1">
                     02 &bull; DIGITAL REEL HUBS
                   </div>
@@ -115,12 +116,12 @@ export default function FashionOnWheelsSection() {
                   </p>
                 </div>
 
-                <div className="bg-white p-4 rounded border border-border-pink">
+                <div className="bg-white p-3.5 rounded border border-border-pink shadow-2xs">
                   <div className="text-[11px] font-black text-pink-primary uppercase tracking-wider mb-1">
-                    03 &bull; PARTICIPANT PRIDE
+                    03 &bull; PARTICIPANT ENTERTAINMENT TOUR
                   </div>
                   <p className="text-xs text-charcoal-muted leading-relaxed">
-                    Kids receive official event tour merchandise, t-shirts, sunshades, and safety-supervised seating.
+                    Kids receive VIP entertainment passes, 4D VR rides, gaming arcade bonding, and tour goodies.
                   </p>
                 </div>
               </div>
@@ -140,6 +141,80 @@ export default function FashionOnWheelsSection() {
             </div>
           </div>
 
+        </div>
+
+        {/* Real Proof: Participant Entertainment Tour Photos from Previous Season */}
+        <div className="mt-14 pt-10 border-t border-border-pink">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-3">
+            <div>
+              <span className="text-[10px] font-extrabold tracking-widest uppercase text-gold bg-navy px-2.5 py-1 rounded-full">
+                AUTHENTIC TOUR MEMORIES
+              </span>
+              <h3 className="font-serif text-lg sm:text-2xl font-bold text-navy mt-2">
+                Glimpses of Participant Entertainment Tour from Previous Season
+              </h3>
+              <p className="text-xs sm:text-sm text-charcoal-muted mt-1">
+                Real photos of kids and families enjoying exclusive 4D VR rides and gaming zones during our Phoenix United edition.
+              </p>
+            </div>
+            <span className="text-[11px] font-bold text-navy bg-surface px-3 py-1 rounded-full border border-border-pink self-start sm:self-auto">
+              📍 Phoenix United, Bareilly
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Card 1: VR Entertainment */}
+            <div className="bg-surface rounded-2xl overflow-hidden border border-border-pink hover:border-gold/80 transition-all shadow-sm flex flex-col">
+              <div className="relative aspect-[16/9] w-full bg-slate-900 overflow-hidden">
+                <Image
+                  src="/images/bareilly-vr-entertainment.jpg"
+                  alt="4D Virtual Reality dynamic ride chairs for kids and parents at Phoenix United Bareilly"
+                  fill
+                  sizes="(max-width: 768px) 94vw, 600px"
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold tracking-wider uppercase bg-navy/90 text-gold border border-gold/40 shadow-xs">
+                    4D VR RIDE EXPERIENCE
+                  </span>
+                </div>
+              </div>
+              <div className="p-4">
+                <h4 className="font-serif text-base font-bold text-navy mb-1">
+                  Thrilling 4D Virtual Reality Jungle Adventure
+                </h4>
+                <p className="text-xs text-charcoal-muted leading-relaxed">
+                  Participants and moms strapped in for a motion-simulated 4D ride, creating unforgettable smiles before the big ramp walk.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2: Arcade Racing Games */}
+            <div className="bg-surface rounded-2xl overflow-hidden border border-border-pink hover:border-gold/80 transition-all shadow-sm flex flex-col">
+              <div className="relative aspect-[16/9] w-full bg-slate-900 overflow-hidden">
+                <Image
+                  src="/images/bareilly-arcade-games.jpg"
+                  alt="Father and kids playing arcade racing games at Phoenix United Bareilly"
+                  fill
+                  sizes="(max-width: 768px) 94vw, 600px"
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold tracking-wider uppercase bg-navy/90 text-gold border border-gold/40 shadow-xs">
+                    MALL ARCADE BONDING
+                  </span>
+                </div>
+              </div>
+              <div className="p-4">
+                <h4 className="font-serif text-base font-bold text-navy mb-1">
+                  Arcade Gaming &amp; Family Togetherness
+                </h4>
+                <p className="text-xs text-charcoal-muted leading-relaxed">
+                  Pure joy and stress-free entertainment as fathers, mothers, and kids enjoyed motorcycle racing and gaming together.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
