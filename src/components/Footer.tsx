@@ -45,6 +45,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs font-medium text-charcoal-muted">
               <li>
+                <a href="#gallery" className="hover:text-pink-primary transition-colors text-pink-primary font-bold">
+                  Bareilly Highlights
+                </a>
+              </li>
+              <li>
                 <a href="#overview" className="hover:text-pink-primary transition-colors">
                   Event Overview
                 </a>
@@ -108,12 +113,12 @@ export default function Footer() {
               ORGANIZER CONTACTS
             </h4>
 
-            <div className="bg-white border border-border-pink p-4 rounded-lg space-y-2 text-xs">
+            <div className="bg-white border border-border-pink p-4 rounded-lg space-y-2 text-xs shadow-2xs">
               <div>
                 <span className="text-[10px] font-bold uppercase text-charcoal-muted block">
-                  WHATSAPP HELPLINE
+                  WHATSAPP HELPLINE &amp; ENQUIRIES
                 </span>
-                <span className="font-bold text-pink-primary">
+                <span className="font-bold text-pink-primary text-sm">
                   +91 95489 18304
                 </span>
               </div>
@@ -146,6 +151,62 @@ export default function Footer() {
             </div>
           </div>
 
+        </div>
+
+        {/* Official Partners Grid Strip */}
+        <div className="py-6 border-b border-border-pink">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
+            <div className="flex items-center gap-2 shrink-0">
+              <span className="w-2 h-2 rounded-full bg-gold" />
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-navy">
+                OFFICIAL PARTNERS &amp; SPONSORS
+              </span>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs font-bold text-navy bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                Jashn Realty <span className="text-[10px] font-normal text-charcoal-muted">• Presenter</span>
+              </span>
+              <span className="text-xs font-bold text-black bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                VAULT <span className="text-[10px] font-normal text-charcoal-muted">by Virat Kohli</span>
+              </span>
+              <span className="text-xs font-bold text-[#102A6B] bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                GD Goenka School
+              </span>
+              <span className="text-xs font-bold text-[#6B5A39] bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                The Centrum Lucknow
+              </span>
+              <span className="text-xs font-bold text-[#415FFF] bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                vivo
+              </span>
+              <span className="text-xs font-bold text-[#0082C3] bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                DECATHLON
+              </span>
+              <span className="text-xs font-bold text-[#E60012] bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                Yakult
+              </span>
+              <span className="text-xs font-bold text-[#D62300] bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                Burger King
+              </span>
+              <span className="text-xs font-bold text-zinc-900 bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                Lakmé Academy
+              </span>
+              <span className="text-xs font-bold text-purple-950 bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                Mezbaan
+              </span>
+              <span className="text-xs font-bold text-emerald-900 bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                Steppingstone
+              </span>
+              <span className="text-xs font-bold text-[#73632A] bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                Cafe Nutri
+              </span>
+              <span className="text-xs font-bold text-[#0B63C5] bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                AdOnMo+
+              </span>
+              <span className="text-xs font-bold text-indigo-950 bg-white px-2.5 py-1 rounded border border-border-pink shadow-2xs">
+                IEM
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}

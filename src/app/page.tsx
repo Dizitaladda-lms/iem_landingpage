@@ -26,13 +26,13 @@ export default function Home() {
       {/* 1. Sticky Navigation Header */}
       <Header />
 
-      {/* 2. Horizontal Announcement Marquee */}
+      {/* 2. Horizontal Announcement Marquee with All Official Sponsors */}
       <AnnouncementTicker />
 
       {/* 3. Hero Section with Live Countdown & Highlights */}
       <HeroSection />
 
-      {/* 3B. 360° Circular Rotating Photo Showcase Section */}
+      {/* 3B. Sticky Scroll Pinned Showcase: Real Glimpses from Phoenix United, Bareilly */}
       <HeroGalleryCarousel />
 
       {/* 4. Event Overview & 4 Core Pillars */}
